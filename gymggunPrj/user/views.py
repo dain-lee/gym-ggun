@@ -46,3 +46,9 @@ def logout(request):
 
 def home(request):
     return render(request, 'home.html')
+
+def calendar(request):
+    return render(request, 'calendar.html')
+
+def routine(request):
+    return render(request, 'routine.html')
