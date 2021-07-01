@@ -2,8 +2,6 @@ import json
 from django.contrib import auth
 from django.contrib.auth import authenticate
 from django.contrib.auth.models import User
-from django import views
-from django.db.models.fields import json
 from django.shortcuts import render, redirect
 from django.views import View
 from django.http import JsonResponse
