@@ -52,3 +52,6 @@ def calendar(request):
 
 def routine(request):
     return render(request, 'routine.html')
+
+def community(request):
+    return render(request, 'community.html')

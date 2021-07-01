@@ -8,5 +8,6 @@ urlpatterns = [
     path('home/logout/', logout, name='logout'),
     path('home/mypage/calendar', calendar, name='calendar'),
     path('home/mypage/routine', routine, name='routine'),
+    path('home/community', community, name='community'),
     path('home/', home, name='home')
 ]
