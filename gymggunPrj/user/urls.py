@@ -9,5 +9,6 @@ urlpatterns = [
     path('home/mypage/calendar', calendar, name='calendar'),
     path('home/mypage/routine', routine, name='routine'),
     path('home/community', community, name='community'),
+    path('home/diet', diet, name='diet'),
     path('home/', home, name='home')
 ]
