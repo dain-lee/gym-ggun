@@ -77,8 +77,20 @@
             },
             {
                 title: '완료',
+                start: new Date('2021/6/30/18:45:00'),
+                end: new Date('2021/6/30/19:50:00'),
+                className: 'bg-success',
+            },
+            {
+                title: '완료',
                 start: new Date('2021/7/1/15:40:00'),
                 end: new Date('2021/7/1/17:50:00'),
+                className: 'bg-success',
+            },
+            {
+                title: '완료',
+                start: new Date('2021/7/2/15:20:00'),
+                end: new Date('2021/7/2/16:50:00'),
                 className: 'bg-success',
             },
             {
@@ -86,12 +98,6 @@
                 start: new Date('2021/7/3/12:10:00'),
                 end: new Date('2021/7/3/14:40:00'),
                 className: 'bg-warning',
-            },
-            {
-                title: '완료',
-                start: new Date('2021/7/4/10:45:00'),
-                end: new Date('2021/7/4/13:00:00'),
-                className: 'bg-success',
             },
             {
                 title: '헬스장',
