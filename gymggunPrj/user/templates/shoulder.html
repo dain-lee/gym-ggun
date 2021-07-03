@@ -12,10 +12,6 @@
     <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
     <title>전국민 헬창 프로젝트 짐꾼</title>
     <!-- Custom CSS -->
-    <link href="assets/extra-libs/c3/c3.min.css" rel="stylesheet">
-    <link href="assets/libs/chartist/dist/chartist.min.css" rel="stylesheet">
-    <link href="assets/extra-libs/jvector/jquery-jvectormap-2.0.2.css" rel="stylesheet" />
-    <!-- Custom CSS -->
     <link href="dist/css/style.min.css" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -297,298 +293,88 @@
                                     class="hide-menu">로그아웃</span></a></li>
                     </ul>
                 </nav>            <!-- End Sidebar scroll-->
-        </aside>        <div class="page-wrapper">
-            <!-- ============================================================== -->
-            <!-- Bread crumb and right sidebar toggle -->
-            <!-- ============================================================== -->
-            <div class="page-breadcrumb">
-                <div class="row">
-                    <div class="col-7 align-self-center">
-                        <h4 class="page-title text-truncate text-dark font-weight-medium mb-1" style="font-size: 25px;">Lee Jin Gyu's Main Page</h4>
-                        <div class="d-flex align-items-center">
-                            <nav aria-label="breadcrumb">
-                                <ol class="breadcrumb m-0 p-0">
-                                </ol>
-                            </nav>
-                        </div>
-                    </div>
-                    <!-- <div class="col-5 align-self-center">
-                        <div class="customize-input float-right">
-                            <select class="custom-select custom-select-set form-control bg-white border-0 custom-shadow custom-radius">
-                                <option selected>Aug 19</option>
-                                <option value="1">July 19</option>
-                                <option value="2">Jun 19</option>
-                            </select>
-                        </div>
-                    </div> -->
-                </div>
-            </div>
-
-            <!-- ============================================================== -->
-            <!-- End Bread crumb and right sidebar toggle -->
-            <!-- ============================================================== -->
-            <!-- ============================================================== -->
-            <!-- Container fluid  -->
-            <!-- ============================================================== -->
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="card">
-                            <div class="card-body">
-                                
-                                    <h4 class="card-title">Today's Routine</h4> 
-                                    <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="customCheck1" checked />
-                                        <label class="custom-control-label" for="customCheck1">벤치 프레스</label>
-                                    </div>
-                                    <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="customCheck2" />
-                                        <label class="custom-control-label" for="customCheck2">숄더 프레스</label>
-                                    </div>
-                                    <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="customCheck3" />
-                                        <label class="custom-control-label" for="customCheck3">딥스</label>
-                                    </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="card-title">Week's Routine</h4>
-                                <div class="table-responsive">
-                                    <table class="table table-bordered">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">Mon</th>
-                                                <th scope="col">Tue</th>
-                                                <th scope="col">Wed</th>
-                                                <th scope="col">Thu</th>
-                                                <th scope="col">Fri</th>
-                                                <th scope="col">Sat</th>
-                                                <th scope="col">Sun</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <th scope="row">벤치프레스</th>
-                                                <td>데드리프트</td>
-                                                <td>숄더프레스</td>
-                                                <td>벤치프레스</td>
-                                                <td>데드리프트</td>
-                                                <td>숄더프레스</td>
-                                                <td rowspan="3">휴식</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">덤벨프레스</th>
-                                                <td>바벨로우</td>
-                                                <td>사이드레이즈</td>
-                                                <td>덤벨프레스</td>
-                                                <td>바벨로우</td>
-                                                <td>사이드레이즈</td>
-                                                
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">푸시업</th>
-                                                <td>풀업</td>
-                                                <td>플란체푸시업</td>
-                                                <td>푸시업</td>
-                                                <td>풀업</td>
-                                                <td>플란체푸시업</td>
-                                                
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6 col-lg-8">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="d-flex align-items-start">
-                                    <h4 class="card-title mb-0">Weight changes</h4>
-                                    <div class="ml-auto">
-                                        <div class="dropdown sub-dropdown">
-                                            <button class="btn btn-link text-muted dropdown-toggle" type="button"
-                                                id="dd1" data-toggle="dropdown" aria-haspopup="true"
-                                                aria-expanded="false">
-                                                <i data-feather="more-vertical"></i>
-                                            </button>
-                                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dd1">
-                                                <a class="dropdown-item" href="#">Insert</a>
-                                                <a class="dropdown-item" href="#">Update</a>
-                                                <a class="dropdown-item" href="#">Delete</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="pl-4 mb-5">
-                                    <div class="stats ct-charts position-relative" style="height: 315px;"></div>
-                                </div>
-                            
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="card-title">Main exercise rate</h4>
-                                <div id="campaign-v2" class="mt-2" style="height:283px; width:100%;"></div>
-                                <ul class="list-style-none mb-0">
-                                    <li>
-                                        <i class="fas fa-circle text-primary font-10 mr-2"></i>
-                                        <span class="text-muted">가슴</span>
-                                        <span class="text-dark float-right font-weight-medium">10times</span>
-                                    </li>
-                                    <li class="mt-3">
-                                        <i class="fas fa-circle text-danger font-10 mr-2"></i>
-                                        <span class="text-muted">등</span>
-                                        <span class="text-dark float-right font-weight-medium">8times</span>
-                                    </li>
-                                    <li class="mt-3">
-                                        <i class="fas fa-circle text-cyan font-10 mr-2"></i>
-                                        <span class="text-muted">어깨</span>
-                                        <span class="text-dark float-right font-weight-medium">5times</span>
-                                    </li>
-                                    
-                                </ul>
-                            </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- <div class="row">
-                    <div class="col-lg-4 col-md-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="card-title">Main exercise rate</h4>
-                                <div id="campaign-v2" class="mt-2" style="height:283px; width:100%;"></div>
-                                <ul class="list-style-none mb-0">
-                                    <li>
-                                        <i class="fas fa-circle text-primary font-10 mr-2"></i>
-                                        <span class="text-muted">가슴</span>
-                                        <span class="text-dark float-right font-weight-medium">$2346</span>
-                                    </li>
-                                    <li class="mt-3">
-                                        <i class="fas fa-circle text-danger font-10 mr-2"></i>
-                                        <span class="text-muted">등</span>
-                                        <span class="text-dark float-right font-weight-medium">$2108</span>
-                                    </li>
-                                    <li class="mt-3">
-                                        <i class="fas fa-circle text-cyan font-10 mr-2"></i>
-                                        <span class="text-muted">어깨</span>
-                                        <span class="text-dark float-right font-weight-medium">$1204</span>
-                                    </li>
-                                    
-                                </ul>
-                            </div>
-                            </div>
-                        </div>
-                    </div>
-                
-                    <div class="col-md-12 col-lg-4">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="card-title">Weight change</h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
- -->
-
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="card">
-                            <div class="">
-                                <div class="row">
-                                    <div class="col-lg-3 border-right pr-0">
-                                        <div class="card-body border-bottom">
-                                            <h4 class="card-title mt-2">Month</h4>
-                                        </div>
-                                        <div class="card-body">
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <div id="calendar-events" class="">
-                                                        <div class="calendar-events mb-3" data-class="bg-info"><i class="fa fa-circle text-info mr-2"></i>예정</div>
-                                                        <div class="calendar-events mb-3" data-class="bg-success"><i class="fa fa-circle text-success mr-2"></i>완료</div>
-                                                        <div class="calendar-events mb-3" data-class="bg-danger"><i class="fa fa-circle text-danger mr-2"></i>실패</div>
-                                                        <div class="calendar-events mb-3" data-class="bg-warning"><i class="fa fa-circle text-warning mr-2"></i>연기</div>
-                                                    </div>
-
-                                                    <!-- checkbox -->
-                                                    <div class="custom-control custom-checkbox">
-                                                        <input type="checkbox" class="custom-control-input" id="drop-remove" />
-                                                        <label class="custom-control-label" for="drop-remove">Remove after drop</label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-9">
-                                        <div class="card-body b-l calender-sidebar">
-                                            <div id="calendar"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        
+        </aside>
         <!-- ============================================================== -->
         <!-- End Left Sidebar - style you can find in sidebar.scss  -->
         <!-- ============================================================== -->
         <!-- ============================================================== -->
         <!-- Page wrapper  -->
         <!-- ============================================================== -->
-            <footer class="footer text-center text-muted">
-                All Rights Reserved by Adminmart. Designed and Developed by <a
-                    href="https://wrappixel.com">WrapPixel</a>.
-            </footer>
+        <div class="page-wrapper">
             <!-- ============================================================== -->
-            <!-- End footer -->
+            <!-- Bread crumb and right sidebar toggle -->
             <!-- ============================================================== -->
-        </div>
-        <!-- ============================================================== -->
-        <!-- End Page wrapper  -->
-        <!-- ============================================================== -->
-    </div>
+            <div class="page-breadcrumb">
+                <div class="row">
+                    <div class="col-7 align-self-center">
+                        <h4 class="page-title text-truncate text-dark font-weight-medium mb-1" style="font-size:30px;">Shoulder press</h4>
+                        <div class="d-flex align-items-center">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb m-0 p-0">
+                                    <li class="breadcrumb-item"><a href="index.html" class="text-muted">어깨</a></li>
+                                    <li class="breadcrumb-item text-muted active" aria-current="page">숄더 프레스</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bench-image">
+                <img src="assets/images/shoulder.png" alt="bench-press" style="margin-left:130px" style="height: 200px;"/>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <br>
+                        <h4 class="page-title text-truncate text-dark font-weight-medium mb-1" style="font-size:20px;">Introduce</h4>
+                        <hr>
+                        밀리터리 프레스, 오버헤드 프레스, 스탠딩 바벨 프레스 등 여러 이름들로도 불린다.<br> 
+                        기립한 채로 기구를 머리 위로 들어올리는 동작이기 때문에 주동근인 삼각근의 개발뿐만 아니라 <br>
+                        전신의 협응력이 필요한 복합 운동이다.
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <br>
+                        <h4 class="page-title text-truncate text-dark font-weight-medium mb-1" style="font-size:20px;">How to</h4>
+                        <hr>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/Nz-GgD0yRYQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- Container fluid  -->
+            <!-- ============================================================== -->
+            
     <!-- ============================================================== -->
     <!-- End Wrapper -->
     <!-- ============================================================== -->
     <!-- End Wrapper -->
+    <div class="chat-windows "></div>
     <!-- ============================================================== -->
     <!-- All Jquery -->
     <!-- ============================================================== -->
-    <script src="assets/libs/jquery/dist/jquery.min.js"></script>
-    <script src="assets/libs/popper.js/dist/umd/popper.min.js"></script>
-    <script src="assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="assets/libs/jquery/dist/jquery.min.js "></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="assets/libs/popper.js/dist/umd/popper.min.js "></script>
+    <script src="assets/libs/bootstrap/dist/js/bootstrap.min.js "></script>
     <!-- apps -->
-    <!-- apps -->
-    <script src="dist/js/app-style-switcher.js"></script>
+    <script src="dist/js/app.min.js "></script>
+    <script src="dist/js/app.init-menusidebar.js"></script>
+    <script src="dist/js/app-style-switcher.js "></script>
     <script src="dist/js/feather.min.js"></script>
-    <script src="assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
-    <script src="dist/js/sidebarmenu.js"></script>
+    <!-- slimscrollbar scrollbar JavaScript -->
+    <script src="assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js "></script>
+    <script src="assets/extra-libs/sparkline/sparkline.js "></script>
+    <!-- theme js -->
+    <!--Menu sidebar -->
+    <script src="dist/js/sidebarmenu.js "></script>
     <!--Custom JavaScript -->
-    <script src="dist/js/custom.min.js"></script>
-    <!--This page JavaScript -->
-    <script src="assets/extra-libs/c3/d3.min.js"></script>
-    <script src="assets/extra-libs/c3/c3.min.js"></script>
-    <script src="assets/libs/chartist/dist/chartist.min.js"></script>
-    <script src="assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
-    <script src="assets/extra-libs/jvector/jquery-jvectormap-2.0.2.min.js"></script>
-    <script src="assets/extra-libs/jvector/jquery-jvectormap-world-mill-en.js"></script>
-    <script src="dist/js/pages/dashboards/dashboard1.min.js"></script>
+    <script src="dist/js/custom.min.js "></script>
 </body>
 
 </html>
