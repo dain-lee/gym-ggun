@@ -19,7 +19,7 @@ def signup(request):
             )
             auth.login(request, user)
             return redirect('/')
-        return render(request, 'signup.html')
+        return render(request, 'home.html')
     return render(request, 'signup.html')
 
 
@@ -62,3 +62,27 @@ def community(request):
 
 def diet(request):
     return render(request, 'diet.html')
+
+
+def chest(request):
+    return render(request, 'chest.html')
+
+
+def arm(request):
+    return render(request, 'arm.html')
+
+
+def backArm(request):
+    return render(request, 'back-arm.html')
+
+
+def back(request):
+    return render(request, 'back.html')
+
+
+def shoulder(request):
+    return render(request, 'shoulder.html')
+
+
+def leg(request):
+    return render(request, 'leg.html')
