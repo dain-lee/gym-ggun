@@ -10,8 +10,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'assets/images/favicon.png' %}">
-    <title>전국민 헬창 프로젝트 짐꾼</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'assets/images/gymggun.png' %}">
+    <title>짐꾼</title>
     <!-- Custom CSS -->
     <link href="{% static 'dist/css/style.min.css' %}" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -52,12 +52,6 @@
                     <div class="navbar-brand">
                         <!-- Logo icon -->
                         <a href="index.html">
-                            <b class="logo-icon" >
-                                <!-- Dark Logo icon
-                                <img src="assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
-                                <!-- Light Logo icon -->
-                                <!-- <img src="assets/images/logo-icon.png" alt="homepage" class="light-logo" /> -->
-                            </b> 
                             <!--End Logo icon -->
                             <!-- Logo text -->
                             <span class="logo-text" style="font-size: 30px">
@@ -143,17 +137,21 @@
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
-                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="index.html"
+                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="http://127.0.0.1:8000/home/"
                                 aria-expanded="false"><i data-feather="home" class="feather-icon"></i><span
                                     class="hide-menu">Home</span></a></li>
                     
+                                    <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="http://127.0.0.1:8000/home/community"
+                                        aria-expanded="false"><i data-feather="star" class="feather-icon"></i><span
+                                                class="hide-menu">Community</span></a></li>
+                                                
                         <li class="list-divider"></li>
                         <li class="nav-small-cap"><span class="hide-menu">Information for you</span></li>
                         <li class="sidebar-item"> <a class="sidebar-link has-arrow" href="javascript:void(0)"
                                 aria-expanded="false"><i data-feather="list" class="feather-icon"></i><span
                                     class="hide-menu">가슴 </span></a>
                             <ul aria-expanded="false" class="collapse  first-level base-level-line">
-                                <li class="sidebar-item"><a href="chest.html" class="sidebar-link"><span
+                                <li class="sidebar-item"><a href="http://127.0.0.1:8000/home/chest" class="sidebar-link"><span
                                             class="hide-menu"> Bench press
                                         </span></a>
                                 </li>
@@ -171,7 +169,7 @@
                                 aria-expanded="false"><i data-feather="list" class="feather-icon"></i><span
                                     class="hide-menu">어깨 </span></a>
                             <ul aria-expanded="false" class="collapse  first-level base-level-line">
-                                <li class="sidebar-item"><a href="shoulder.html" class="sidebar-link"><span
+                                <li class="sidebar-item"><a href="http://127.0.0.1:8000/home/shoulder" class="sidebar-link"><span
                                             class="hide-menu"> Shoulder press
                                         </span></a>
                                 </li>
@@ -198,7 +196,7 @@
                                 aria-expanded="false"><i data-feather="list" class="feather-icon"></i><span
                                     class="hide-menu">등 </span></a>
                             <ul aria-expanded="false" class="collapse  first-level base-level-line">
-                                <li class="sidebar-item"><a href="back.html" class="sidebar-link"><span
+                                <li class="sidebar-item"><a href="http://127.0.0.1:8000/home/back" class="sidebar-link"><span
                                             class="hide-menu"> Dead lift
                                         </span></a>
                                 </li>
@@ -217,7 +215,7 @@
                             aria-expanded="false"><i data-feather="list" class="feather-icon"></i><span
                                 class="hide-menu">하체 </span></a>
                         <ul aria-expanded="false" class="collapse  first-level base-level-line">
-                            <li class="sidebar-item"><a href="leg.html" class="sidebar-link"><span
+                            <li class="sidebar-item"><a href="http://127.0.0.1:8000/home/leg" class="sidebar-link"><span
                                         class="hide-menu"> Squat
                                     </span></a>
                             </li>
@@ -231,7 +229,7 @@
                             aria-expanded="false"><i data-feather="list" class="feather-icon"></i><span
                                 class="hide-menu">이두 </span></a>
                         <ul aria-expanded="false" class="collapse  first-level base-level-line">
-                            <li class="sidebar-item"><a href="arm.html" class="sidebar-link"><span
+                            <li class="sidebar-item"><a href="http://127.0.0.1:8000/home/arm" class="sidebar-link"><span
                                         class="hide-menu"> Barbell curl
                                     </span></a>
                             </li>
@@ -250,7 +248,7 @@
                             aria-expanded="false"><i data-feather="list" class="feather-icon"></i><span
                                 class="hide-menu">삼두 </span></a>
                         <ul aria-expanded="false" class="collapse  first-level base-level-line">
-                            <li class="sidebar-item"><a href="back-arm.html" class="sidebar-link"><span
+                            <li class="sidebar-item"><a href="http://127.0.0.1:8000/home/back-arm" class="sidebar-link"><span
                                         class="hide-menu"> Dips
                                     </span></a>
                             </li>
@@ -262,39 +260,39 @@
                         </li>
                         <li class="list-divider"></li>
                         <li class="nav-small-cap"><span class="hide-menu">set plan</span></li>
-
-                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="set-routine.html"
+                    
+                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="http://127.0.0.1:8000/home/set-routine"
                                 aria-expanded="false"><i data-feather="server" class="feather-icon"></i><span
                                     class="hide-menu">나만의 운동 루틴
                                 </span></a>
                         </li>
                         <li class="sidebar-item"> <a class="sidebar-link sidebar-link"
-                                href="authentication-register1.html" aria-expanded="false"><i data-feather="info"
+                                href="http://127.0.0.1:8000/home/diet" aria-expanded="false"><i data-feather="info"
                                     class="feather-icon"></i><span class="hide-menu">나만의 식단 관리
                                 </span></a>
                         </li>
                         <li class="list-divider"></li>
                         <li class="nav-small-cap"><span class="hide-menu">Authentication</span></li>
-
-                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="authentication-login1.html"
+                    
+                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="http://127.0.0.1:8000/home/login"
                                 aria-expanded="false"><i data-feather="lock" class="feather-icon"></i><span
                                     class="hide-menu">로그인
                                 </span></a>
                         </li>
                         <li class="sidebar-item"> <a class="sidebar-link sidebar-link"
-                                href="authentication-register1.html" aria-expanded="false"><i data-feather="lock"
+                                href="http://127.0.0.1:8000/home/signup" aria-expanded="false"><i data-feather="lock"
                                     class="feather-icon"></i><span class="hide-menu">회원가입
                                 </span></a>
                         </li>
-
+                    
                         <li class="list-divider"></li>
                         <li class="nav-small-cap"><span class="hide-menu">Extra</span></li>
-                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="authentication-login1.html"
+                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="http://127.0.0.1:8000/home/login"
                                 aria-expanded="false"><i data-feather="log-out" class="feather-icon"></i><span
                                     class="hide-menu">로그아웃</span></a></li>
                     </ul>
                 </nav>            <!-- End Sidebar scroll-->
-        </aside>
+        </aside>        
         <!-- ============================================================== -->
         <!-- End Left Sidebar - style you can find in sidebar.scss  -->
         <!-- ============================================================== -->

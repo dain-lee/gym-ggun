@@ -10,12 +10,13 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'assets/images/favicon.png' %}">
-    <title>전국민 헬창 프로젝트 짐꾼</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'assets/images/gymggun.png' %}">
+    <title>짐꾼</title>
     <!-- Custom CSS -->
     <link href="{% static 'assets/libs/fullcalendar/dist/fullcalendar.min.css' %}" rel="stylesheet" />
     <link href="{% static 'assets/extra-libs/datatables.net-bs4/css/dataTables.bootstrap4.css' %}" rel="stylesheet" />
     <link href="{% static 'dist/css/style.min.css' %}" rel="stylesheet">
+    <script src="{% static 'dist/js/includeHTML.js' %}"></script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -54,12 +55,6 @@
                     <div class="navbar-brand">
                         <!-- Logo icon -->
                         <a href="index.html">
-                            <b class="logo-icon" >
-                                <!-- Dark Logo icon -->
-                                <img src="assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
-                                <!-- Light Logo icon -->
-                                <!-- <img src="assets/images/logo-icon.png" alt="homepage" class="light-logo" /> -->
-                            </b> 
                             <!--End Logo icon -->
                             <!-- Logo text -->
                             <span class="logo-text" style="font-size: 30px">
@@ -148,6 +143,10 @@
                         <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="http://127.0.0.1:8000/home/"
                                 aria-expanded="false"><i data-feather="home" class="feather-icon"></i><span
                                     class="hide-menu">Home</span></a></li>
+
+                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="http://127.0.0.1:8000/home/community"
+                                aria-expanded="false"><i data-feather="star" class="feather-icon"></i><span
+                                        class="hide-menu">Community</span></a></li>
                     
                         <li class="list-divider"></li>
                         <li class="nav-small-cap"><span class="hide-menu">Information for you</span></li>
@@ -265,7 +264,7 @@
                         <li class="list-divider"></li>
                         <li class="nav-small-cap"><span class="hide-menu">set plan</span></li>
                     
-                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="http://127.0.0.1:8000/home/routine"
+                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="http://127.0.0.1:8000/home/set-routine"
                                 aria-expanded="false"><i data-feather="server" class="feather-icon"></i><span
                                     class="hide-menu">나만의 운동 루틴
                                 </span></a>
@@ -284,14 +283,14 @@
                                 </span></a>
                         </li>
                         <li class="sidebar-item"> <a class="sidebar-link sidebar-link"
-                                href="signup.html" aria-expanded="false"><i data-feather="lock"
+                                href="http://127.0.0.1:8000/home/signup" aria-expanded="false"><i data-feather="lock"
                                     class="feather-icon"></i><span class="hide-menu">회원가입
                                 </span></a>
                         </li>
                     
                         <li class="list-divider"></li>
                         <li class="nav-small-cap"><span class="hide-menu">Extra</span></li>
-                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="authentication-login1.html"
+                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="http://127.0.0.1:8000/home/login"
                                 aria-expanded="false"><i data-feather="log-out" class="feather-icon"></i><span
                                     class="hide-menu">로그아웃</span></a></li>
                     </ul>
@@ -717,6 +716,7 @@
     <script src="{% static 'dist/js/pages/calendar/cal-init.js' %}"></script>
     <script src="{% static 'assets/extra-libs/datatables.net/js/jquery.dataTables.min.js' %}"></script>
     <script src="{% static 'dist/js/pages/datatable/datatable-basic.init.js' %}"></script>
+    <script>includeHTML();</script>
 </body>
 
 </html>

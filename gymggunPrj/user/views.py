@@ -86,3 +86,7 @@ def shoulder(request):
 
 def leg(request):
     return render(request, 'leg.html')
+
+
+def setRoutine(request):
+    return render(request, 'set-routine.html')
