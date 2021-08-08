@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import get_object_or_404, render, redirect
 from django.contrib import auth
 from django.contrib.auth.hashers import make_password, check_password
 from .models import User
@@ -16,15 +16,15 @@ def signup(request):  # 회원가입 페이지를 보여주기 위한 함수
         email = request.POST.get('email', None)
         purpose = request.POST.get('purpose', None)
         res_data = {}
-        if not (username and password1 and password2 and email):
-            return HttpResponse('모든 값을 입력하십시오')
-          #  res_data['error'] = "모든 값을 입력해야 합니다."
+        if not (username and password1 and password2 and email and purpose):
+           # return HttpResponse('모든 값을 입력하십시오')
+           # res_data['error'] = "모든 값을 입력해야 합니다."
             # return res_data['error']
-           # return render(request, 'signup.html', {'error': 'please input all data '})
+            return render(request, 'signup.html', {'error': 'please input all data '})
         if password1 != password2:
-            return HttpResponse('비밀번호가 다릅니다.')
-          #  res_data['error'] = '비밀번호가 다릅니다.'
-           # return render(request, 'signup.html', {'error': '비밀번호가 다릅니다. '})
+          #  return HttpResponse('비밀번호가 다릅니다.')
+           # res_data['error'] = '비밀번호가 다릅니다.'
+            return render(request, 'signup.html', {'error': '비밀번호가 다릅니다. '})
         else:
             user = User(username=username, password=make_password(
                 password1), email=email, purpose=purpose)
@@ -52,7 +52,7 @@ def login(request):
                 request.session['user'] = myuser.id
                 # 세션도 딕셔너리 변수 사용과 똑같이 사용하면 된다.
                 # 세션 user라는 key에 방금 로그인한 id를 저장한것.
-                return redirect('/home')
+                return redirect('home')
             else:
                 response_data['error'] = "비밀번호를 틀렸습니다."
 
@@ -65,7 +65,11 @@ def logout(request):
 
 
 def home(request):
-    return render(request, 'home.html')
+    user_id = request.session.get('user')
+    if user_id:
+        user = User.objects.get(pk=user_id)
+
+    return render(request, 'home.html', {"user": user})
 
 
 def calendar(request):
@@ -80,8 +84,9 @@ def community(request):
     return render(request, 'community.html')
 
 
-def diet(request):
-    return render(request, 'diet.html')
+def diet(request, user_id):
+    user = get_object_or_404(User, pk=user_id)
+    return render(request, 'diet.html', {"user": user})
 
 
 def chest(request):
