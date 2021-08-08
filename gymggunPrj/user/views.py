@@ -1,47 +1,67 @@
-import json
-from django.contrib import auth
-from django.contrib.auth import authenticate
-from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
-from django.views import View
-from django.http import JsonResponse
-
+from django.contrib import auth
+from django.contrib.auth.hashers import make_password, check_password
 from .models import User
+from django.http import HttpResponse
 
 
-def signup(request):
-    if request.method == 'POST':
-        if request.POST['password1'] == request.POST['password2']:
-            user = User.objects.create_user(
-                username=request.POST['username'],
-                password=request.POST['password1'],
-                email=request.POST['email'],
-            )
-            auth.login(request, user)
-            return redirect('/')
-        return render(request, 'home.html')
-    return render(request, 'signup.html')
+def signup(request):  # 회원가입 페이지를 보여주기 위한 함수
+    if request.method == "GET":
+        return render(request, 'signup.html')
+
+    elif request.method == "POST":
+        username = request.POST.get('username', None)  # 딕셔너리형태
+        password1 = request.POST.get('password1', None)
+        password2 = request.POST.get('password2', None)
+        email = request.POST.get('email', None)
+        purpose = request.POST.get('purpose', None)
+        res_data = {}
+        if not (username and password1 and password2 and email):
+            return HttpResponse('모든 값을 입력하십시오')
+          #  res_data['error'] = "모든 값을 입력해야 합니다."
+            # return res_data['error']
+           # return render(request, 'signup.html', {'error': 'please input all data '})
+        if password1 != password2:
+            return HttpResponse('비밀번호가 다릅니다.')
+          #  res_data['error'] = '비밀번호가 다릅니다.'
+           # return render(request, 'signup.html', {'error': '비밀번호가 다릅니다. '})
+        else:
+            user = User(username=username, password=make_password(
+                password1), email=email, purpose=purpose)
+            user.save()
+        # register를 요청받으면 signup.html 로 응답.
+        return render(request, 'home.html', res_data)
 
 
 def login(request):
-    if request.method == 'POST':
-        username = request.POST['username']
-        password = request.POST['password']
-        user = auth.authenticate(request, username=username, password=password)
+    response_data = {}
 
-        if user is not None:
-            auth.login(request, user)
-            return redirect('home')
-        else:
-            return render(request, 'login.html', {'error': '아이디나 비밀번호가 잘못되었습니다.'})
-
-    else:
+    if request.method == "GET":
         return render(request, 'login.html')
+
+    elif request.method == "POST":
+        login_username = request.POST.get('username', None)
+        login_password = request.POST.get('password', None)
+
+        if not (login_username and login_password):
+            response_data['error'] = "아이디와 비밀번호를 모두 입력해주세요."
+        else:
+            myuser = User.objects.get(username=login_username)
+            # db에서 꺼내는 명령. Post로 받아온 username으로 , db의 username을 꺼내온다.
+            if check_password(login_password, myuser.password):
+                request.session['user'] = myuser.id
+                # 세션도 딕셔너리 변수 사용과 똑같이 사용하면 된다.
+                # 세션 user라는 key에 방금 로그인한 id를 저장한것.
+                return redirect('/home')
+            else:
+                response_data['error'] = "비밀번호를 틀렸습니다."
+
+        return render(request, 'login.html', response_data)
 
 
 def logout(request):
-    auth.logout(request)
-    return redirect('home')
+    request.session.pop('user')
+    return redirect('/')
 
 
 def home(request):

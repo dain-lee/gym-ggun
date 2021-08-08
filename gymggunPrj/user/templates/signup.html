@@ -11,8 +11,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'assets/images/favicon.png' %}">
-    <title>회원가입</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'assets/images/gymggun.png' %}">
+    <title>짐꾼</title>
     <!-- Custom CSS -->
     <link href="{% static 'dist/css/style.min.css' %}" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -41,52 +41,52 @@
         <!-- Login box.scss -->
         <!-- ============================================================== -->
         <div class="auth-wrapper d-flex no-block justify-content-center align-items-center position-relative"
-            style="background:url(assets/images/big/auth-bg.jpg) no-repeat center center;">
+            style="background:url(/static/assets/images/big/auth-bg.jpg) no-repeat center center;">
             <div class="auth-box row text-center">
                 <div class="col-lg-7 col-md-5 modal-bg-img" style="background-image: url(/static/assets/images/big/running.jpeg);">
                 </div>
                 <div class="col-lg-5 col-md-7 bg-white">
                     <div class="p-3">
                         <h2 class="mt-3 text-center">Welcome</h2>
-                        <form class="mt-4">
+                        <form class="mt-4" method="POST" action=".">
+                            {% csrf_token %}
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="form-group">
-                                        <input class="form-control" type="text" placeholder="your name">
+                                        <input id = "username" name="username" class="form-control" type="text" placeholder="사용자 이름">
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="form-group">
-                                        <input class="form-control" type="email" placeholder="email address">
+                                        <input name="email" id = "email" class="form-control" type="email" placeholder="이메일 주소">
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="form-group">
-                                        <input class="form-control" type="password" placeholder="password">
+                                        <input id="password1" name="password1" class="form-control" type="password" placeholder="비밀번호">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+                                        <input id = "password2" name="password2" class="form-control" type="password" placeholder="비밀번호 확인">
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="card">
                                         <div class="card-body">
                                             <h4 class="card-title">사용 목적</h4>
-                                            <fieldset class="checkbox">
+                                            <fieldset class="radio">
                                                 <label>
-                                                    <input type="checkbox" value=""> 근력 향상
+                                                    <input type="radio" name="purpose" value="muscle strength"> 근력 향상
                                                 </label>
-                                            </fieldset>
-                                            <fieldset class="checkbox">
                                                 <label>
-                                                    <input type="checkbox" value="" checked> 체중 감량
+                                                    <input type="radio" name="purpose" value="lose weight"> 체중 감량
                                                 </label>
-                                            </fieldset>
-                                            <fieldset class="checkbox disabled">
                                                 <label>
-                                                    <input type="checkbox" value="" disabled> 체중 증량
+                                                    <input type="radio" name="purpose" value="gain weight"> 체중 증량
                                                 </label>
-                                            </fieldset>
-                                            <fieldset class="checkbox disabled">
                                                 <label>
-                                                    <input type="checkbox" value="" disabled> 체중 유지
+                                                    <input type="radio" name="purpose" value="maintain weight"> 체중 유지
                                                 </label>
                                             </fieldset>
                                         </div>
