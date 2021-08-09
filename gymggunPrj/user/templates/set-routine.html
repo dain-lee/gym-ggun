@@ -25,6 +25,7 @@
                 var table = document.getElementById('new_routine').style.visibility="visible";
             }
         </script>
+
 </head>
 
 <body>
@@ -302,169 +303,170 @@
         <!-- ============================================================== -->
         <!-- Page wrapper  -->
         <!-- ============================================================== -->
+        
+        
         <div class="page-wrapper">
-            <!-- ============================================================== -->
-            <!-- Bread crumb and right sidebar toggle -->
-            <!-- ============================================================== -->
             <div class="page-breadcrumb">
                 <div class="row">
                     <div class="col-7 align-self-center">
-                        <h4 class="page-title text-truncate text-dark font-weight-medium mb-1" style="font-size:30px;">Set your own routine!</h4>
+                        <h4 class="page-title text-truncate text-dark font-weight-medium mb-1" style="font-size:30px;">Set your routine!</h4>
                         <div class="d-flex align-items-center">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb m-0 p-0">
-                             
+                                    <li class="breadcrumb-item"><a class="text-muted">나만의 운동루틴을 설정하자</a></li>
                                 </ol>
                             </nav>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-4 col-md-12">
-                    <div class="card">
-                        <div class="card-body">
-                            <h4 class="card-title">Purpose</h4>
-                            <hr>
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="customCheck1"checked />
-                                <label class="custom-control-label" for="customCheck1">근육량 증가</label>
-                            </div>
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="customCheck2" />
-                                <label class="custom-control-label" for="customCheck2">다이어트</label>
-                            </div>
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="customCheck3" />
-                                <label class="custom-control-label" for="customCheck3">체력증진</label>
-                            </div>
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="customCheck3" />
-                                <label class="custom-control-label" for="customCheck3">현 상태유지</label>
-                            </div>
-
-                        </div>
-                    </div>
+                <!-- 운동목적 설정 -->
+                <div class="row"> 
+                    <input type="checkbox" name="purpose" value="purpose1"/>근육증가
+                    <input type="checkbox" name="purpose" value="purpose2"/>다이어트
+                    <input type="checkbox" name="purpose" value="purpose3"/>체력증진
                 </div>
-                <div class="col-lg-4 col-md-12">
-                    <div class="card">
-                        <div class="card-body">
-                            <h4 class="card-title">Frequency</h4>
-                            <hr>
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="customCheck1"  />
-                                <label class="custom-control-label" for="customCheck1">주 3회</label>
-                            </div>
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="customCheck1"  />
-                                <label class="custom-control-label" for="customCheck1">주 4회</label>
-                            </div>
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="customCheck2" />
-                                <label class="custom-control-label" for="customCheck2">주 5회</label>
-                            </div>
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="customCheck3" checked />
-                                <label class="custom-control-label" for="customCheck3">주 6회</label>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-12">
-                    <div class="card">
-                        <div class="card-body">
-                            <h4 class="card-title">Wanted part</h4>
-                            <hr>
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="customCheck1" checked/>
-                                <label class="custom-control-label" for="customCheck1">가슴</label>
-                            </div>
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="customCheck2"checked />
-                                <label class="custom-control-label" for="customCheck2">어깨</label>
-                            </div>
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="customCheck3"checked />
-                                <label class="custom-control-label" for="customCheck3">등</label>
-                            </div>
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="customCheck3"checked />
-                                <label class="custom-control-label" for="customCheck3">하체</label>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div>
-                    <button onclick="showroutine()" type="button" class="btn btn-primary" style="margin-left: 350px;"><i class="fas fa-check"></i>
-                        Set routine</button>
-                </div>
-                <br><br><br>
-            
-        
+                <!-- 운동빈도 설정 -->
                 <div class="row">
-                    <div class="col-md-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="card-title">New routine</h4>
-                                <div class="table-responsive">
-                                    <table class="table table-bordered" id ="new_routine" style="visibility: hidden;">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">Mon</th>
-                                                <th scope="col">Tue</th>
-                                                <th scope="col">Wed</th>
-                                                <th scope="col">Thu</th>
-                                                <th scope="col">Fri</th>
-                                                <th scope="col">Sat</th>
-                                                <th scope="col">Sun</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <th scope="row">벤치프레스</th>
-                                                <td>데드리프트</td>
-                                                <td>숄더프레스</td>
-                                                <td>벤치프레스</td>
-                                                <td>데드리프트</td>
-                                                <td>숄더프레스</td>
-                                                <td rowspan="3">휴식</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">덤벨프레스</th>
-                                                <td>바벨로우</td>
-                                                <td>사이드레이즈</td>
-                                                <td>덤벨프레스</td>
-                                                <td>바벨로우</td>
-                                                <td>사이드레이즈</td>
-                                                
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">푸시업</th>
-                                                <td>풀업</td>
-                                                <td>플란체푸시업</td>
-                                                <td>푸시업</td>
-                                                <td>풀업</td>
-                                                <td>플란체푸시업</td>
-                                                
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <input type="checkbox" name="frequency" value="frequency1"/>주 3회
+                    <input type="checkbox" name="frequency" value="frequency2"/>주 4회
+                    <input type="checkbox" name="frequency" value="frequency3"/>주 5회
+                </div>
+                <!-- 운동부위 설정 -->
+                <div class="row">
+                    <input type="checkbox" name="wanted" value="wanted1"/>가슴
+                    <input type="checkbox" name="wanted" value="wanted2"/>어깨
+                    <input type="checkbox" name="wanted" value="wanted3"/>등
+                    <input type="checkbox" name="wanted" value="wanted4"/>하체
                 </div>
 
-                <div>
-                    <button type="button" class="btn btn-primary" style="margin-left: 350px;"><i class="fas fa-check"></i>
-                        Save routine</button>
-                </div>
+                <button onclick="calRoutine()">설정하기</button>
+                <!-- 체크박스에 따라 속성을 변수값에 저장 -->
+                <div id = "main_purpose"></div>
+                <div id = "main_frequency"></div>
+                <!-- <div id = "main_wanted"></div> -->
+                
+
+                <script>
+                    function calRoutine(){
+                        var purpose_length = document.getElementsByName("purpose").length;
+                        var frequency_length = document.getElementsByName("frequency").length;
+                        var wanted_length = document.getElementsByName("wanted").length;
+
+                        for(var i = 0; i < purpose_length; i++){
+                            if(document.getElementsByName("purpose")[i].checked == true){
+                                var main_purpose = document.getElementsByName("purpose")[i].value;
+                                document.getElementById("main_purpose").innerHTML = main_purpose;
+                            }
+                        }
+
+                        for (var i = 0; i < frequency_length; i++){
+                            if(document.getElementsByName("frequency")[i].checked == true){
+                                var main_frequency = document.getElementsByName("frequency")[i].value;
+                                document.getElementById("main_frequency").innerHTML = main_frequency;
+                            }
+                        }
+
+                        // for (var i = 0; i < wanted_length; i++){
+                        //     if(document.getElementsByName("wanted")[i].checked == true){
+                        //         var wanted = []; var j = 0;
+                        //         wanted[j] = document.getElementsByName("wanted")[i].value; 
+                        //         // console.log(wanted[j]);
+                        //         document.getElementById("main_wanted").innerHTML = wanted[j]; j++;
+                        //     }
+                        // }
+
+                        // 체크된 속성값에 따라 운동 루틴을 설정해줌
+                        var exe = []; var idx = 0;
+                        var chest = ['벤치프레스','푸시업'];
+                        var shoulder = ['숄더프레스','플란체 푸시업'];
+                        var back = ['데드리프트','풀업'];
+                        var leg = ['스쿼트','런지'];
+
+                        // 주 3회 운동시 9개
+                        if(main_frequency == "frequency1"){
+                            console.log("test1");
+                            // 운동 목적이 근육증가
+                            if(main_purpose == "purpose1"){
+                                exe[0] = chest[0]; exe[1] = shoulder[0]; exe[2] = back[0];
+                                exe[3] = leg[0]; exe[4] = chest[0]; exe[5] = shoulder[0];
+                                exe[6] = back[0]; exe[7] = leg[0]; exe[8] = chest[0];
+
+                            }
+                            // 운동 목적이 가벼움
+                            else if (main_purpose == "purpose2" || main_purpose == "purpose3"){
+                                exe[0] = chest[1]; exe[1] = shoulder[1]; exe[2] = back[1];
+                                exe[3] = leg[1]; exe[4] = chest[1]; exe[5] = shoulder[1];
+                                exe[6] = back[1]; exe[7] = leg[1]; exe[8] = chest[1];
+                            }
+
+                        }
+
+                        // 주 4회 운동시 12개
+                        else if(main_frequency == "frequency2"){
+                            console.log("test2");
+                            // 운동 목적이 근육증가
+                            if(main_purpose == "purpose1"){
+                                exe[0] = chest[0]; exe[1] = shoulder[0]; exe[2] = back[0];
+                                exe[3] = leg[0]; exe[4] = chest[0]; exe[5] = shoulder[0];
+                                exe[6] = back[0]; exe[7] = leg[0]; exe[8] = chest[0];
+                                exe[9] = shoulder[0]; exe[10] = back[0]; exe[11] = leg[0];
+                            }
+                            // 운동 목적이 가벼움
+                            else if (main_purpose == "purpose2" || main_purpose == "purpose3"){
+                                exe[0] = chest[1]; exe[1] = shoulder[1]; exe[2] = back[1];
+                                exe[3] = leg[1]; exe[4] = chest[1]; exe[5] = shoulder[1];
+                                exe[6] = back[1]; exe[7] = leg[1]; exe[8] = chest[1];
+                                exe[9] = shoulder[1]; exe[10] = back[1]; exe[11] = leg[1];
+                            }
+                        }
+
+                        // 주 5회 운동시 15개
+                        else if(main_frequency == "frequency3"){
+                            console.log("test3");
+                            // 운동 목적이 근육증가
+                            if(main_purpose == "purpose1"){
+                                exe[0] = chest[0]; exe[1] = shoulder[0]; exe[2] = back[0];
+                                exe[3] = leg[0]; exe[4] = chest[0]; exe[5] = shoulder[0];
+                                exe[6] = back[0]; exe[7] = leg[0]; exe[8] = chest[0];
+                                exe[9] = shoulder[0]; exe[10] = back[0]; exe[11] = leg[0];
+                                exe[12] = chest[0]; exe[13] = shoulder[0]; exe[14] = back[0];
+                            }
+                            // 운동 목적이 가벼움
+                            else if (main_purpose == "purpose2" || main_purpose == "purpose3"){
+                                exe[0] = chest[1]; exe[1] = shoulder[1]; exe[2] = back[1];
+                                exe[3] = leg[1]; exe[4] = chest[1]; exe[5] = shoulder[1];
+                                exe[6] = back[1]; exe[7] = leg[1]; exe[8] = chest[1];
+                                exe[9] = shoulder[1]; exe[10] = back[1]; exe[11] = leg[1];
+                                exe[12] = chest[1]; exe[13] = shoulder[1]; exe[14] = back[1];
+                            }
+                        }
+
+                        for (var i = 0 ; i < exe.length; i++){
+                            document.write(exe[i]+"<br>");
+                            // document.getElementById('print').innerHTML = exe[i];
+                        }
+
+                        
+                    }
+                </script>
+                <!-- <div id="main_purpose"></div> 
+                <div id="main_frequency"></div>
+                <div id="main_wanted"></div> -->
+                
+
             </div>
         </div>
+
+
+
+
+
+
+
+
+
+
+
             <!-- ============================================================== -->
             <!-- End Bread crumb and right sidebar toggle -->
             <!-- ============================================================== -->
@@ -497,6 +499,10 @@
     <script src="{% static 'dist/js/sidebarmenu.js' %} "></script>
     <!--Custom JavaScript -->
     <script src="{% static 'dist/js/custom.min.js' %} "></script>
+    <script src="{% static 'js/data.js' %}" charset="utf-8"></script>
+    <script src="{% static 'js/func.js' %}" charset="utf-8"></script>
+    <script src="js/data.js" charset="utf-8"></script>
+    <script src="js/func.js" charset="utf-8"></script>
 </body>
 
 </html>
