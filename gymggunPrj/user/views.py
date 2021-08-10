@@ -1,8 +1,9 @@
 from django.shortcuts import get_object_or_404, render, redirect
 from django.contrib import auth
 from django.contrib.auth.hashers import make_password, check_password
-from .models import User
+from .models import User, Diet
 from django.http import HttpResponse
+from django.views.decorators.csrf import csrf_exempt
 
 
 def signup(request):  # 회원가입 페이지를 보여주기 위한 함수
@@ -30,7 +31,7 @@ def signup(request):  # 회원가입 페이지를 보여주기 위한 함수
                 password1), email=email, purpose=purpose)
             user.save()
         # register를 요청받으면 signup.html 로 응답.
-        return render(request, 'home.html', res_data)
+        return render(request, 'login.html', res_data)
 
 
 def login(request):
@@ -86,8 +87,27 @@ def community(request):
 
 def diet(request, user_id):
     user = get_object_or_404(User, pk=user_id)
-    return render(request, 'diet.html', {"user": user})
+    diets = Diet.objects.filter(writer=user)
+    return render(request, 'diet.html', {"user" : user, "diets" : diets})
 
+@csrf_exempt
+def addDiet(request, user_id):
+    user = get_object_or_404(User, pk=user_id)
+    if request.method == 'POST':
+        new_diet = Diet()
+        new_diet.food = request.POST['food']
+        new_diet.amount = request.POST['amount']
+        new_diet.kcal = request.POST['kcal']
+        new_diet.writer = user
+        # new_diet.date = request.POST['date']
+        new_diet.save()
+    return redirect('diet', user.id)
+
+def deleteDiet(request, user_id, diet_id):
+    user = get_object_or_404(User, pk=user_id)
+    delete_diet = Diet.objects.get(id=diet_id)
+    delete_diet.delete()
+    return redirect('diet', user.id)
 
 def chest(request):
     return render(request, 'chest.html')

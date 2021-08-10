@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.db.models.deletion import CASCADE
 
 class User(models.Model):  # 장고에서 제공하는 models.Model를 상속받아야한다.
     username = models.CharField(max_length=64, verbose_name='username')
@@ -15,3 +15,10 @@ class User(models.Model):  # 장고에서 제공하는 models.Model를 상속받
 
     class Meta:  # 메타 클래스를 이용하여 테이블명 지정
         db_table = 'test_user'
+
+class Diet(models.Model):
+    writer = models.ForeignKey(User, on_delete=CASCADE, default='')
+    food = models.CharField(max_length=30)
+    amount = models.CharField(max_length=20)
+    kcal = models.FloatField(default=0)
+    date = models.DateField(auto_now=True)

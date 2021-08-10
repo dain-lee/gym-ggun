@@ -348,20 +348,82 @@
                             <div class="card">
                                 <div class="card-body">
                                     <div class="customize-input float-right">
-                                        <select class="custom-select custom-select-set form-control bg-white border-0 custom-shadow custom-radius">
+                                        <select class="custom-select custom-select-set form-control bg-white border-0 custom-shadow custom-radius" id="dietSelect">
                                             <option value="1">근력 향상</option>
                                             <option value="2">체중 증량</option>
-                                            <option selected>체중 감량</option>
+                                            <option value="3">체중 감량</option>
                                         </select>
                                     </div>
                                     <h4 class="card-title">식단 추천</h4>
                                     <h6 class="card-subtitle"><i class="mr-1 font-18 mdi mdi-numeric-2-box-multiple-outline"></i> 나의 목적에 맞는 식단 추천</h6>
                                     <div class="table-responsive">
-                                        <table id="zero_config" class="table table-striped table-bordered no-wrap">
+                                        <table id="zero_config" class="table table-striped table-bordered no-wrap value1">
                                             <thead>
                                                 <tr>
                                                     <th>음식</th>
-                                                    <th>무게</th>
+                                                    <th>양</th>
+                                                    <th>칼로리</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>오트밀</td>
+                                                    <td>50g</td>
+                                                    <td>186 kcal</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>바나나</td>
+                                                    <td>1개</td>
+                                                    <td>105 kcal</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>프로틴</td>
+                                                    <td>25g</td>
+                                                    <td>98 kcal</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>아몬드</td>
+                                                    <td>10알</td>
+                                                    <td>70 kcal</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <table id="zero_config" class="table table-striped table-bordered no-wrap value2" style="display: none;">
+                                            <thead>
+                                                <tr>
+                                                    <th>음식</th>
+                                                    <th>양</th>
+                                                    <th>칼로리</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>밥</td>
+                                                    <td>1.5공기</td>
+                                                    <td>450 kcal</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>고등어구이</td>
+                                                    <td>1토막</td>
+                                                    <td>190 kcal</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>계란프라이</td>
+                                                    <td>2개</td>
+                                                    <td>240 kcal</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>아몬드</td>
+                                                    <td>10알</td>
+                                                    <td>70 kcal</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <table id="zero_config" class="table table-striped table-bordered no-wrap value3" style="display: none;">
+                                            <thead>
+                                                <tr>
+                                                    <th>음식</th>
+                                                    <th>양</th>
                                                     <th>칼로리</th>
                                                 </tr>
                                             </thead>
@@ -369,17 +431,22 @@
                                                 <tr>
                                                     <td>닭가슴살</td>
                                                     <td>100g</td>
-                                                    <td>110 kcal</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>고구마</td>
-                                                    <td>90g</td>
-                                                    <td>112 kcal</td>
+                                                    <td>164 kcal</td>
                                                 </tr>
                                                 <tr>
                                                     <td>사과</td>
-                                                    <td>한개</td>
-                                                    <td>72 kcal</td>
+                                                    <td>1개</td>
+                                                    <td>150 kcal</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>두유</td>
+                                                    <td>1컵</td>
+                                                    <td>110 kcal</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>오이</td>
+                                                    <td>1개</td>
+                                                    <td>18 kcal</td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -388,10 +455,36 @@
                             </div>
                         </div>
                     </div>
+
+                    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+                    <script>
+                        console.log('script');
+                        $('#dietSelect').change(function(){
+                            if($(this).val()=="1")
+                            {
+                                $('.value1').show();
+                                $('.value2').hide();
+                                $('.value3').hide();
+                            }
+                            else if($(this).val()=="2")
+                            {
+                                $('.value1').hide();
+                                $('.value2').show();
+                                $('.value3').hide();
+                            }
+                            else
+                            {
+                                $('.value1').hide();
+                                $('.value2').hide();
+                                $('.value3').show();
+                            }
+                        })
+                    </script>
+
                     <div class="row" >
                         <div class="col-12 mt-4">
                             <div class="card-columns" style="column-count: 1">
-                                <h4>오늘의 식사</h4>
+                                <h4 class="card-title">오늘의 식사</h4>
                                 <!-- Card -->
                                 <div class="card">
                                     <div style="display: flex; flex-direction: row">
@@ -428,56 +521,55 @@
                                                 </p>
                                             </div>
                                         </div>
-                                        
                                     </div>
                                 </div>
-                                
                             </div>
                         </div>
-<div class="row">
-    <div class="col-12 mt-4">
-        <div class="card">
-            <div class="card-body">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">음식</th>
-                                <th scope="col">무게</th>
-                                <th scope="col">칼로리</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="col">1</th>
-                                <td>닭가슴살</td>
-                                <td>100g</td>
-                                <td>110 kcal</td>
-                            </tr>
-                            <tr>
-                                <th scope="col">2</th>
-                                <td>방울 토마토</td>
-                                <td>100g</td>
-                                <td>16 kcal</td>
-                            </tr>
-                            <tr>
-                                <th scope="col">3</th>
-                                <td>양상추</td>
-                                <td>100g</td>
-                                <td>12 kcal</td>
-                            </tr>
-                            <tr>
-                                <th scope="col">4</th>
-                                <td><input id="textarea1" placeholder="Type and enter" class="form-control border-0" type="text" style="padding: 0; height: auto" /></td>
-                                <td><input id="textarea1" placeholder="Type and enter" class="form-control border-0" type="text" style="padding: 0; height: auto" /></td>
-                                <td><input id="textarea1" placeholder="Type and enter" class="form-control border-0" type="text" style="padding: 0; height: auto" /></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12 mt-4 col-lg-8">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title">식단 기록</h4>
+                                    <table class="table" style="text-align: center;">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">#</th>
+                                                <th scope="col">음식</th>
+                                                <th scope="col">양</th>
+                                                <th scope="col">칼로리</th>
+                                                <th scope="col"></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {% for diet in diets %}
+                                            <tr>
+                                                <th scope="col">{{forloop.counter}}</th>
+                                                <td>{{diet.food}}</td>
+                                                <td>{{diet.amount}}</td>
+                                                <td>{{diet.kcal}} kcal</td>
+                                                <td style="padding: 0; vertical-align: middle;"><a class="btn btn-primary" href="{% url 'deleteDiet' user_id=user.id diet_id=diet.id %}" style="float: right;">삭제</a></td>
+                                            </tr>
+                                            {% endfor %}
+                                        </tbody>
+                                    </table>
+                                    <form method="POST" action="{% url 'addDiet' user.id %}">
+                                        {% csrf_token %}
+                                        <table class="table" style="margin-bottom: 0;">
+                                            <tbody>
+                                                <tr>
+                                                    <td><input id="food" name="food" placeholder="음식" class="form-control border-0" type="text" style="padding: 0; height: auto;" /></td>
+                                                    <td><input id="amount" name="amount" placeholder="양" class="form-control border-0" type="text" style="padding: 0; height: auto" /></td>
+                                                    <td><input id="kcal" name="kcal" placeholder="칼로리" class="form-control border-0" type="number" style="padding: 0; height: auto;" /></td>
+                                                    <td style="padding: 0; vertical-align: middle;"><button class="btn btn-primary" type="submit" style="float: right;">추가</button></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
                         <div class="col-lg-4 col-md-12 mt-4">
                             <div class="card">
                                 <div class="card-body">
@@ -503,16 +595,16 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
 
-                        
+                    
+
                     </div>
-                    </div>
-                </div>
             </div>
+        </div>
             <!-- ============================================================== -->
             <!-- End Page wrapper  -->
             <!-- ============================================================== -->
-        </div>
         <!-- ============================================================== -->
         <!-- End Wrapper -->
         <!-- ============================================================== -->
