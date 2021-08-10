@@ -65,7 +65,8 @@
                         <!-- ============================================================== -->
                         <div class="navbar-brand">
                             <!-- Logo icon -->
-                            <a href="index.html">
+                            <a href="{% url 'home' %}">
+                                <!--End Logo icon -->
                                 <!-- Logo text -->
                                 <span class="logo-text" style="font-size: 30px">
                                     <!-- dark Logo text -->
@@ -105,7 +106,7 @@
                                     <img src="{% static 'assets/images/users/profile-pic.jpg' %}" alt="user" class="rounded-circle"
                                         width="40">
                                     <span class="ml-2 d-none d-lg-inline-block"><span>Hello,</span> <span
-                                            class="text-dark">Lee Jin Gyu</span> <i data-feather="chevron-down"
+                                            class="text-dark" >{{user.username}}</span> <i data-feather="chevron-down"
                                             class="svg-icon"></i></span>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right user-dd animated flipInY">
@@ -150,13 +151,13 @@
                     <!-- Sidebar navigation-->
                     <nav class="sidebar-nav">
                         <ul id="sidebarnav">
-                            <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="http://127.0.0.1:8000/home/"
+                            <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="{% url 'home' %}"
                                     aria-expanded="false"><i data-feather="home" class="feather-icon"></i><span
                                         class="hide-menu">Home</span></a></li>
-
-                                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="http://127.0.0.1:8000/home/community"
-                                            aria-expanded="false"><i data-feather="star" class="feather-icon"></i><span
-                                                    class="hide-menu">Community</span></a></li>
+    
+                            <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="{% url 'community' %}"
+                                    aria-expanded="false"><i data-feather="star" class="feather-icon"></i><span
+                                            class="hide-menu">Community</span></a></li>
                         
                             <li class="list-divider"></li>
                             <li class="nav-small-cap"><span class="hide-menu">Information for you</span></li>
@@ -164,15 +165,15 @@
                                     aria-expanded="false"><i data-feather="list" class="feather-icon"></i><span
                                         class="hide-menu">가슴 </span></a>
                                 <ul aria-expanded="false" class="collapse  first-level base-level-line">
-                                    <li class="sidebar-item"><a href="http://127.0.0.1:8000/home/chest" class="sidebar-link"><span
+                                    <li class="sidebar-item"><a href="{% url 'chest' %}" class="sidebar-link"><span
                                                 class="hide-menu"> Bench press
                                             </span></a>
                                     </li>
-                                    <li class="sidebar-item"><a href="form-input-grid.html" class="sidebar-link"><span
+                                    <li class="sidebar-item"><a href="#" class="sidebar-link"><span
                                                 class="hide-menu"> Dumbbell press
                                             </span></a>
                                     </li>
-                                    <li class="sidebar-item"><a href="form-checkbox-radio.html" class="sidebar-link"><span
+                                    <li class="sidebar-item"><a href="#" class="sidebar-link"><span
                                                 class="hide-menu"> Push up
                                             </span></a>
                                     </li>
@@ -182,23 +183,23 @@
                                     aria-expanded="false"><i data-feather="list" class="feather-icon"></i><span
                                         class="hide-menu">어깨 </span></a>
                                 <ul aria-expanded="false" class="collapse  first-level base-level-line">
-                                    <li class="sidebar-item"><a href="http://127.0.0.1:8000/home/shoulder" class="sidebar-link"><span
+                                    <li class="sidebar-item"><a href="{% url 'shoulder' %}" class="sidebar-link"><span
                                                 class="hide-menu"> Shoulder press
                                             </span></a>
                                     </li>
-                                    <li class="sidebar-item"><a href="table-dark-basic.html" class="sidebar-link"><span
+                                    <li class="sidebar-item"><a href="#" class="sidebar-link"><span
                                                 class="hide-menu"> Bebind the neck press
                                             </span></a>
                                     </li>
-                                    <li class="sidebar-item"><a href="table-sizing.html" class="sidebar-link"><span
+                                    <li class="sidebar-item"><a href="#" class="sidebar-link"><span
                                                 class="hide-menu"> Front raise
                                             </span></a>
                                     </li>
-                                    <li class="sidebar-item"><a href="table-layout-coloured.html" class="sidebar-link"><span
+                                    <li class="sidebar-item"><a href="#" class="sidebar-link"><span
                                                 class="hide-menu"> Side lateral raise
                                             </span></a>
                                     </li>
-                                    <li class="sidebar-item"><a href="table-datatable-basic.html" class="sidebar-link"><span
+                                    <li class="sidebar-item"><a href="#" class="sidebar-link"><span
                                                 class="hide-menu"> Planche push up
                                             </span></a>
                                     </li>
@@ -209,15 +210,15 @@
                                     aria-expanded="false"><i data-feather="list" class="feather-icon"></i><span
                                         class="hide-menu">등 </span></a>
                                 <ul aria-expanded="false" class="collapse  first-level base-level-line">
-                                    <li class="sidebar-item"><a href="http://127.0.0.1:8000/home/back" class="sidebar-link"><span
+                                    <li class="sidebar-item"><a href="{% url 'back' %}" class="sidebar-link"><span
                                                 class="hide-menu"> Dead lift
                                             </span></a>
                                     </li>
-                                    <li class="sidebar-item"><a href="chart-chart-js.html" class="sidebar-link"><span
+                                    <li class="sidebar-item"><a href="#" class="sidebar-link"><span
                                                 class="hide-menu"> Barbell row
                                             </span></a>
                                     </li>
-                                    <li class="sidebar-item"><a href="chart-knob.html" class="sidebar-link"><span
+                                    <li class="sidebar-item"><a href="#" class="sidebar-link"><span
                                                 class="hide-menu">
                                                 Pull up
                                             </span></a>
@@ -228,11 +229,11 @@
                                 aria-expanded="false"><i data-feather="list" class="feather-icon"></i><span
                                     class="hide-menu">하체 </span></a>
                             <ul aria-expanded="false" class="collapse  first-level base-level-line">
-                                <li class="sidebar-item"><a href="http://127.0.0.1:8000/home/leg" class="sidebar-link"><span
+                                <li class="sidebar-item"><a href="{% url 'leg' %}" class="sidebar-link"><span
                                             class="hide-menu"> Squat
                                         </span></a>
                                 </li>
-                                <li class="sidebar-item"><a href="chart-chart-js.html" class="sidebar-link"><span
+                                <li class="sidebar-item"><a href="#" class="sidebar-link"><span
                                             class="hide-menu"> Lunge
                                         </span></a> 
                                 </li>
@@ -242,15 +243,15 @@
                                 aria-expanded="false"><i data-feather="list" class="feather-icon"></i><span
                                     class="hide-menu">이두 </span></a>
                             <ul aria-expanded="false" class="collapse  first-level base-level-line">
-                                <li class="sidebar-item"><a href="http://127.0.0.1:8000/home/arm" class="sidebar-link"><span
+                                <li class="sidebar-item"><a href="{% url 'arm' %}" class="sidebar-link"><span
                                             class="hide-menu"> Barbell curl
                                         </span></a>
                                 </li>
-                                <li class="sidebar-item"><a href="chart-chart-js.html" class="sidebar-link"><span
+                                <li class="sidebar-item"><a href="#" class="sidebar-link"><span
                                             class="hide-menu"> Dumbbell curl
                                         </span></a>
                                 </li>
-                                <li class="sidebar-item"><a href="chart-knob.html" class="sidebar-link"><span
+                                <li class="sidebar-item"><a href="#" class="sidebar-link"><span
                                             class="hide-menu">
                                             Hammer curl
                                         </span></a>
@@ -261,11 +262,11 @@
                                 aria-expanded="false"><i data-feather="list" class="feather-icon"></i><span
                                     class="hide-menu">삼두 </span></a>
                             <ul aria-expanded="false" class="collapse  first-level base-level-line">
-                                <li class="sidebar-item"><a href="http://127.0.0.1:8000/home/back-arm" class="sidebar-link"><span
+                                <li class="sidebar-item"><a href="{% url 'backArm' %}" class="sidebar-link"><span
                                             class="hide-menu"> Dips
                                         </span></a>
                                 </li>
-                                <li class="sidebar-item"><a href="chart-chart-js.html" class="sidebar-link"><span
+                                <li class="sidebar-item"><a href="#" class="sidebar-link"><span
                                             class="hide-menu"> Triceps Extension
                                         </span></a>
                                 </li>
@@ -274,33 +275,33 @@
                             <li class="list-divider"></li>
                             <li class="nav-small-cap"><span class="hide-menu">set plan</span></li>
                         
-                            <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="http://127.0.0.1:8000/home/set-routine"
+                            <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="{% url 'setRoutine' %}"
                                     aria-expanded="false"><i data-feather="server" class="feather-icon"></i><span
                                         class="hide-menu">나만의 운동 루틴
                                     </span></a>
                             </li>
                             <li class="sidebar-item"> <a class="sidebar-link sidebar-link"
-                                    href="http://127.0.0.1:8000/home/diet" aria-expanded="false"><i data-feather="info"
+                                    href="{% url 'diet' user.id %}" aria-expanded="false"><i data-feather="info"
                                         class="feather-icon"></i><span class="hide-menu">나만의 식단 관리
                                     </span></a>
                             </li>
                             <li class="list-divider"></li>
                             <li class="nav-small-cap"><span class="hide-menu">Authentication</span></li>
                         
-                            <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="http://127.0.0.1:8000/home/login"
+                            <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="{% url 'login' %}"
                                     aria-expanded="false"><i data-feather="lock" class="feather-icon"></i><span
                                         class="hide-menu">로그인
                                     </span></a>
                             </li>
                             <li class="sidebar-item"> <a class="sidebar-link sidebar-link"
-                                    href="http://127.0.0.1:8000/home/signup" aria-expanded="false"><i data-feather="lock"
+                                    href="{% url 'signup' %}" aria-expanded="false"><i data-feather="lock"
                                         class="feather-icon"></i><span class="hide-menu">회원가입
                                     </span></a>
                             </li>
                         
                             <li class="list-divider"></li>
                             <li class="nav-small-cap"><span class="hide-menu">Extra</span></li>
-                            <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="http://127.0.0.1:8000/home/login"
+                            <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="{% url 'logout' %}"
                                     aria-expanded="false"><i data-feather="log-out" class="feather-icon"></i><span
                                         class="hide-menu">로그아웃</span></a></li>
                         </ul>
@@ -319,7 +320,7 @@
                 <div class="page-breadcrumb">
                     <div class="row">
                         <div class="col-7 align-self-center">
-                            <h4 class="page-title text-truncate text-dark font-weight-medium mb-1">{{user.username}}님의 식단</h4>
+                            <h4 class="page-title text-truncate text-dark font-weight-medium mb-1" style="font-size: 25px;">{{user.username}}'s Food Diary</h4>
                             <div class="d-flex align-items-center" style="margin-top: 20px">
                                 <div class="btn-list">
                                     <button type="button" class="btn waves-effect waves-light btn-rounded btn-secondary">아침</button>

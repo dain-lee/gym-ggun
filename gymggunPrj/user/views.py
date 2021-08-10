@@ -62,7 +62,7 @@ def login(request):
 
 def logout(request):
     request.session.pop('user')
-    return redirect('/')
+    return redirect('login')
 
 
 def home(request):
@@ -74,21 +74,34 @@ def home(request):
 
 
 def calendar(request):
-    return render(request, 'calendar.html')
+    user_id = request.session.get('user')
+    if user_id:
+        user = User.objects.get(pk=user_id)
+
+    return render(request, 'calendar.html', {"user": user})
 
 
 def routine(request):
-    return render(request, 'routine.html')
+    user_id = request.session.get('user')
+    if user_id:
+        user = User.objects.get(pk=user_id)
+
+    return render(request, 'routine.html', {"user": user})
 
 
 def community(request):
-    return render(request, 'community.html')
+    user_id = request.session.get('user')
+    if user_id:
+        user = User.objects.get(pk=user_id)
+
+    return render(request, 'community.html', {"user": user})
 
 
 def diet(request, user_id):
     user = get_object_or_404(User, pk=user_id)
     diets = Diet.objects.filter(writer=user)
     return render(request, 'diet.html', {"user" : user, "diets" : diets})
+
 
 @csrf_exempt
 def addDiet(request, user_id):
@@ -103,35 +116,65 @@ def addDiet(request, user_id):
         new_diet.save()
     return redirect('diet', user.id)
 
+
 def deleteDiet(request, user_id, diet_id):
     user = get_object_or_404(User, pk=user_id)
     delete_diet = Diet.objects.get(id=diet_id)
     delete_diet.delete()
     return redirect('diet', user.id)
 
+
 def chest(request):
-    return render(request, 'chest.html')
+    user_id = request.session.get('user')
+    if user_id:
+        user = User.objects.get(pk=user_id)
+
+    return render(request, 'chest.html', {"user": user})
 
 
 def arm(request):
-    return render(request, 'arm.html')
+    user_id = request.session.get('user')
+    if user_id:
+        user = User.objects.get(pk=user_id)
+
+    return render(request, 'arm.html', {"user": user})
 
 
 def backArm(request):
-    return render(request, 'back-arm.html')
+    user_id = request.session.get('user')
+    if user_id:
+        user = User.objects.get(pk=user_id)
+
+    return render(request, 'back-arm.html', {"user": user})
 
 
 def back(request):
-    return render(request, 'back.html')
+    user_id = request.session.get('user')
+    if user_id:
+        user = User.objects.get(pk=user_id)
+
+    return render(request, 'back.html', {"user": user})
 
 
 def shoulder(request):
-    return render(request, 'shoulder.html')
+    user_id = request.session.get('user')
+    if user_id:
+        user = User.objects.get(pk=user_id)
+
+    return render(request, 'shoulder.html', {"user": user})
 
 
 def leg(request):
-    return render(request, 'leg.html')
+    user_id = request.session.get('user')
+    if user_id:
+        user = User.objects.get(pk=user_id)
+
+    return render(request, 'leg.html', {"user": user})
 
 
 def setRoutine(request):
-    return render(request, 'set-routine.html')
+    user_id = request.session.get('user')
+    if user_id:
+        user = User.objects.get(pk=user_id)
+
+    return render(request, 'set-routine.html', {"user": user})
