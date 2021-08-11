@@ -265,7 +265,7 @@
                         <li class="list-divider"></li>
                         <li class="nav-small-cap"><span class="hide-menu">set plan</span></li>
                     
-                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="{% url 'setRoutine' %}"
+                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="{% url 'setRoutine' user.id %}"
                                 aria-expanded="false"><i data-feather="server" class="feather-icon"></i><span
                                     class="hide-menu">나만의 운동 루틴
                                 </span></a>
@@ -401,60 +401,6 @@
                                                 <td><input id="textarea1" placeholder="Type and enter" class="form-control border-0" type="text" style="padding: 0; height: auto" /></td>
                                                 <td><input id="textarea1" placeholder="Type and enter" class="form-control border-0" type="text" style="padding: 0; height: auto" /></td>
                                                 <td><input id="textarea1" placeholder="Type and enter" class="form-control border-0" type="text" style="padding: 0; height: auto" /></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="card-title">Week's Routine</h4>
-                                <div class="table-responsive">
-                                    <table class="table table-bordered">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">Mon</th>
-                                                <th scope="col">Tue</th>
-                                                <th scope="col">Wed</th>
-                                                <th scope="col">Thu</th>
-                                                <th scope="col">Fri</th>
-                                                <th scope="col">Sat</th>
-                                                <th scope="col">Sun</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <th scope="row">벤치프레스</th>
-                                                <td>데드리프트</td>
-                                                <td>숄더프레스</td>
-                                                <td>벤치프레스</td>
-                                                <td>데드리프트</td>
-                                                <td>숄더프레스</td>
-                                                <td rowspan="3">휴식</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">덤벨프레스</th>
-                                                <td>바벨로우</td>
-                                                <td>사이드레이즈</td>
-                                                <td>덤벨프레스</td>
-                                                <td>바벨로우</td>
-                                                <td>사이드레이즈</td>
-                                                
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">푸시업</th>
-                                                <td>풀업</td>
-                                                <td>플란체푸시업</td>
-                                                <td>푸시업</td>
-                                                <td>풀업</td>
-                                                <td>플란체푸시업</td>
-                                                
                                             </tr>
                                         </tbody>
                                     </table>

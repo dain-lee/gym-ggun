@@ -1,7 +1,7 @@
 from django.shortcuts import get_object_or_404, render, redirect
 from django.contrib import auth
 from django.contrib.auth.hashers import make_password, check_password
-from .models import User, Diet
+from .models import Routine, User, Diet
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 
@@ -172,9 +172,52 @@ def leg(request):
     return render(request, 'leg.html', {"user": user})
 
 
-def setRoutine(request):
-    user_id = request.session.get('user')
-    if user_id:
-        user = User.objects.get(pk=user_id)
+def setRoutine(request,user_id):
+    user = get_object_or_404(User, pk=user_id)
+    routines = Routine.objects.filter(writer=user)
+    return render(request, 'set-routine.html', {"user" : user, "routines" : routines})
 
-    return render(request, 'set-routine.html', {"user": user})
+@csrf_exempt
+def addRoutine(request, user_id):
+    user = get_object_or_404(User, pk=user_id)
+    if request.method == 'POST':
+        new_routine = Routine()
+        # new_routine.work = request.POST['work']
+        new_routine.mon_work1 = request.POST['mon_work1']
+        new_routine.mon_work2 = request.POST['mon_work2']
+        new_routine.mon_work3 = request.POST['mon_work3']
+
+        new_routine.tue_work1 = request.POST['tue_work1']
+        new_routine.tue_work2 = request.POST['tue_work2']
+        new_routine.tue_work3 = request.POST['tue_work3']
+
+        new_routine.wed_work1 = request.POST['wed_work1']
+        new_routine.wed_work2 = request.POST['wed_work2']
+        new_routine.wed_work3 = request.POST['wed_work3']
+        
+        new_routine.thr_work1 = request.POST['thr_work1']
+        new_routine.thr_work2 = request.POST['thr_work2']
+        new_routine.thr_work3 = request.POST['thr_work3']
+
+        new_routine.fri_work1 = request.POST['fri_work1']
+        new_routine.fri_work2 = request.POST['fri_work2']
+        new_routine.fri_work3 = request.POST['fri_work3']
+
+        new_routine.sat_work1 = request.POST['sat_work1']
+        new_routine.sat_work2 = request.POST['sat_work2']
+        new_routine.sat_work3 = request.POST['sat_work3']
+
+        new_routine.sun_work1 = request.POST['sun_work1']
+        new_routine.sun_work2 = request.POST['sun_work2']
+        new_routine.sun_work3 = request.POST['sun_work3']
+
+        new_routine.writer = user
+        new_routine.save()
+    return redirect('setRoutine', user.id)
+
+def deleteRoutine(request, user_id, routine_id):
+    user = get_object_or_404(User, pk=user_id)
+    delete_routine = Routine.objects.get(id=routine_id)
+    delete_routine.delete()
+    return redirect('setRoutine', user.id)
+

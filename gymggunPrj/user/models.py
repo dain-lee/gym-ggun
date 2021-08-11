@@ -22,3 +22,34 @@ class Diet(models.Model):
     amount = models.CharField(max_length=20)
     kcal = models.FloatField(default=0)
     date = models.DateField(auto_now=True)
+
+class Routine(models.Model):
+    #work = models.CharField(max_length=30)
+    writer = models.ForeignKey(User, on_delete=CASCADE, default='')
+    mon_work1 = models.CharField(max_length=30, default='')
+    mon_work2 = models.CharField(max_length=30, default='')
+    mon_work3 = models.CharField(max_length=30, default='')
+
+    tue_work1 = models.CharField(max_length=30, default='')
+    tue_work2 = models.CharField(max_length=30, default='')
+    tue_work3 = models.CharField(max_length=30, default='')
+
+    wed_work1 = models.CharField(max_length=30, default='')
+    wed_work2 = models.CharField(max_length=30, default='')
+    wed_work3 = models.CharField(max_length=30, default='')
+
+    thr_work1 = models.CharField(max_length=30, default='')
+    thr_work2 = models.CharField(max_length=30, default='')
+    thr_work3 = models.CharField(max_length=30, default='')
+
+    fri_work1 = models.CharField(max_length=30, default='')
+    fri_work2 = models.CharField(max_length=30, default='')
+    fri_work3 = models.CharField(max_length=30, default='')
+
+    sat_work1 = models.CharField(max_length=30, default='')
+    sat_work2 = models.CharField(max_length=30, default='')
+    sat_work3 = models.CharField(max_length=30, default='')
+
+    sun_work1 = models.CharField(max_length=30, default='')
+    sun_work2 = models.CharField(max_length=30, default='')
+    sun_work3 = models.CharField(max_length=30, default='')
