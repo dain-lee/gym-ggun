@@ -321,7 +321,7 @@
                 </div>
                 <!-- 운동목적 설정 -->
             <div class="row">
-                <div class="col-12 mt-4 ">
+                <div class="col-9 mt-4 ">
                     <div class="card">
                         <div class="card-body">
                             <div class="row"> 
@@ -342,10 +342,10 @@
                 
                             <div class="row">
                                 <h4 class="card-title">Wanted  </h4>
-                                <input type="checkbox" name="wanted" value="wanted1"/>가슴
-                                <input type="checkbox" name="wanted" value="wanted2"/>어깨
-                                <input type="checkbox" name="wanted" value="wanted3"/>등
-                                <input type="checkbox" name="wanted" value="wanted4"/>하체
+                                <input type="checkbox" name="wanted" value="wanted1" checked="checked" />가슴
+                                <input type="checkbox" name="wanted" value="wanted2" checked="checked"/>어깨
+                                <input type="checkbox" name="wanted" value="wanted3" checked="checked"/>등
+                                <input type="checkbox" name="wanted" value="wanted4" checked="checked"/>하체
                             </div>
                         </div>
                         <!-- <button onclick="calRoutine()">aaa</button> -->
@@ -353,9 +353,23 @@
                     </div>
                 </div>
                 <!-- 체크박스에 따라 속성을 변수값에 저장 -->
-                <div id = "main_purpose"></div>
-                <div id = "main_frequency"></div>
+            
                 <!-- <div id = "main_wanted"></div> -->
+            <div class="row">
+                <div class="col-12 mt-4 ">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Recommanded</h4>
+                            <div>
+                                Chest : <span id="chestS"></span><br>
+                                Shoulder : <span id="shoulderS"></span><br>
+                                Back : <span id="backS"></span><br>
+                                Leg : <span id="legS"></span><br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             </div>    
                 <!-- <div>
                     <form method="POST" action="{% url 'addRoutine' user.id %}">
@@ -547,6 +561,7 @@
 
                         // 체크된 속성값에 따라 운동 루틴을 설정해줌
                         var exe = []; var idx = 0;
+                        var chest_select, shoulder_select, back_select, leg_select;
                         var chest = ['벤치프레스','푸시업'];
                         var shoulder = ['숄더프레스','플란체 푸시업'];
                         var back = ['데드리프트','풀업'];
@@ -560,13 +575,20 @@
                                 exe[0] = chest[0]; exe[1] = shoulder[0]; exe[2] = back[0];
                                 exe[3] = leg[0]; exe[4] = chest[0]; exe[5] = shoulder[0];
                                 exe[6] = back[0]; exe[7] = leg[0]; exe[8] = chest[0];
-
+                                chest_select = "벤치프레스"
+                                shoulder_select = "숄더프레스"
+                                back_select = "데드리프트"
+                                leg_select = "스쿼트"
                             }
                             // 운동 목적이 가벼움
                             else if (main_purpose == "purpose2" || main_purpose == "purpose3"){
                                 exe[0] = chest[1]; exe[1] = shoulder[1]; exe[2] = back[1];
                                 exe[3] = leg[1]; exe[4] = chest[1]; exe[5] = shoulder[1];
                                 exe[6] = back[1]; exe[7] = leg[1]; exe[8] = chest[1];
+                                chest_select = "푸시업"
+                                shoulder_select = "플란체 푸시업"
+                                back_select = "풀업"
+                                leg_select = "런지"
                             }
 
                         }
@@ -580,6 +602,10 @@
                                 exe[3] = leg[0]; exe[4] = chest[0]; exe[5] = shoulder[0];
                                 exe[6] = back[0]; exe[7] = leg[0]; exe[8] = chest[0];
                                 exe[9] = shoulder[0]; exe[10] = back[0]; exe[11] = leg[0];
+                                chest_select = "벤치프레스"
+                                shoulder_select = "숄더프레스"
+                                back_select = "데드리프트"
+                                leg_select = "스쿼트"
                             }
                             // 운동 목적이 가벼움
                             else if (main_purpose == "purpose2" || main_purpose == "purpose3"){
@@ -587,6 +613,10 @@
                                 exe[3] = leg[1]; exe[4] = chest[1]; exe[5] = shoulder[1];
                                 exe[6] = back[1]; exe[7] = leg[1]; exe[8] = chest[1];
                                 exe[9] = shoulder[1]; exe[10] = back[1]; exe[11] = leg[1];
+                                chest_select = "푸시업"
+                                shoulder_select = "플란체 푸시업"
+                                back_select = "풀업"
+                                leg_select = "런지"
                             }
                         }
 
@@ -600,6 +630,10 @@
                                 exe[6] = back[0]; exe[7] = leg[0]; exe[8] = chest[0];
                                 exe[9] = shoulder[0]; exe[10] = back[0]; exe[11] = leg[0];
                                 exe[12] = chest[0]; exe[13] = shoulder[0]; exe[14] = back[0];
+                                chest_select = "벤치프레스"
+                                shoulder_select = "숄더프레스"
+                                back_select = "데드리프트"
+                                leg_select = "스쿼트"
                             }
                             // 운동 목적이 가벼움
                             else if (main_purpose == "purpose2" || main_purpose == "purpose3"){
@@ -608,15 +642,23 @@
                                 exe[6] = back[1]; exe[7] = leg[1]; exe[8] = chest[1];
                                 exe[9] = shoulder[1]; exe[10] = back[1]; exe[11] = leg[1];
                                 exe[12] = chest[1]; exe[13] = shoulder[1]; exe[14] = back[1];
+                                chest_select = "푸시업"
+                                shoulder_select = "플란체 푸시업"
+                                back_select = "풀업"
+                                leg_select = "런지"
                             }
                         }
 
-                        for (var i = 0 ; i < exe.length; i++){
-                            document.write(exe[i]+"<br>");
-                            console.log(exe[i]);
-                            // document.getElementById('print').innerHTML = exe[i];
-                        }
+                        // for (var i = 0 ; i < exe.length; i++){
+                        //     document.write(exe[i]+"<br>");
+                        //     console.log(exe[i]);
+                        //     // document.getElementById('print').innerHTML = exe[i];
+                        // }
 
+                        document.getElementById("chestS").innerHTML = chest_select;
+                        document.getElementById("shoulderS").innerHTML = shoulder_select;
+                        document.getElementById("backS").innerHTML = back_select;
+                        document.getElementById("legS").innerHTML = leg_select;
                         
                     }
                 </script>
@@ -629,7 +671,8 @@
         </div>
 
 
-
+        <div id = "main_purpose" style="visibility: hidden;"></div>
+        <div id = "main_frequency" style="visibility: hidden;"></div>
 
 
 
